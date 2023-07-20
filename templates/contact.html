@@ -1,0 +1,441 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <link rel="stylesheet" href="{% static 'util.css' %}">    
+
+
+    <script nonce="9c2d1416-fe13-4b50-882c-0cea9b49daff">
+        (function (w, d) {
+            ! function (dK, dL, dM, dN) {
+                dK[dM] = dK[dM] || {};
+                dK[dM].executed = [];
+                dK.zaraz = {
+                    deferred: [],
+                    listeners: []
+                };
+                dK.zaraz.q = [];
+                dK.zaraz._f = function (dO) {
+                    return function () {
+                        var dP = Array.prototype.slice.call(arguments);
+                        dK.zaraz.q.push({
+                            m: dO,
+                            a: dP
+                        })
+                    }
+                };
+                for (const dQ of ["track", "set", "debug"]) dK.zaraz[dQ] = dK.zaraz._f(dQ);
+                dK.zaraz.init = () => {
+                    var dR = dL.getElementsByTagName(dN)[0],
+                        dS = dL.createElement(dN),
+                        dT = dL.getElementsByTagName("title")[0];
+                    dT && (dK[dM].t = dL.getElementsByTagName("title")[0].text);
+                    dK[dM].x = Math.random();
+                    dK[dM].w = dK.screen.width;
+                    dK[dM].h = dK.screen.height;
+                    dK[dM].j = dK.innerHeight;
+                    dK[dM].e = dK.innerWidth;
+                    dK[dM].l = dK.location.href;
+                    dK[dM].r = dL.referrer;
+                    dK[dM].k = dK.screen.colorDepth;
+                    dK[dM].n = dL.characterSet;
+                    dK[dM].o = (new Date).getTimezoneOffset();
+                    if (dK.dataLayer)
+                        for (const dX of Object.entries(Object.entries(dataLayer).reduce(((dY, dZ) => ({
+                            ...dY[1],
+                            ...dZ[1]
+                        })), {}))) zaraz.set(dX[0], dX[1], {
+                            scope: "page"
+                        });
+                    dK[dM].q = [];
+                    for (; dK.zaraz.q.length;) {
+                        const d_ = dK.zaraz.q.shift();
+                        dK[dM].q.push(d_)
+                    }
+                    dS.defer = !0;
+                    for (const ea of [localStorage, sessionStorage]) Object.keys(ea || {}).filter((ec => ec.startsWith("_zaraz_"))).forEach((eb => {
+                        try {
+                            dK[dM]["z_" + eb.slice(7)] = JSON.parse(ea.getItem(eb))
+                        } catch {
+                            dK[dM]["z_" + eb.slice(7)] = ea.getItem(eb)
+                        }
+                    }));
+                    dS.referrerPolicy = "origin";
+                    dS.src = "/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(dK[dM])));
+                    dR.parentNode.insertBefore(dS, dR)
+                };
+                ["complete", "interactive"].includes(dL.readyState) ? zaraz.init() : dK.addEventListener("DOMContentLoaded", zaraz.init)
+            }(w, d, "zarazData", "script");
+        })(window, document);
+    </script>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">ProPredict</a> <button aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
+                data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button"><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'predict' %}">Predict</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                    </li>
+                    {% if user.is_authenticated %}
+                    <!-- <li style="color: white;">Hello {{username}}</li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Login</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br><br><br><br>
+    <div class=" container ">
+        <div class="row featurette">
+            <div class="col-md-6">
+                <h2 class="featurette-heading fw-normal lh-1">Contact Us</h2>
+                <br>
+                <p class="lead">Have a question, feedback, or inquiry? We're here to help. Get in touch with us using
+                    the contact information below, or fill out the contact form, and we'll get back to you as soon as
+                    possible.</p>
+                <br>
+                <h5>Contact Information:</h5>
+                <br>
+                <p style="font-size: 120%;">Email: manitejjilla@gmail.com</p>
+                <p style="font-size: 120%;">Phone: 9912127510</p>
+                <p style="font-size: 120%;">Address: Flat No-407,Vinoothna Orchid,Padmavathi Colony, Kushaiguda,
+                    Hyderabad, India</p>
+            </div>
+
+            <div class="col-md-6">
+                <center>
+                    <img src="https://source.unsplash.com/300x250/?contact" alt="" class="img-fluid">
+                </center>
+            </div>
+
+
+        </div>
+        <br><br>
+        <center>
+            <p class="lead">We value your input and strive to provide excellent customer service. Our dedicated support
+                team is available to assist you during our business hours. Feel free to reach out to us via email or
+                phone, and we'll be happy to address any concerns you may have.</p>
+        </center>
+        <br><br>
+
+        <div class="container-contact100">
+            <div class="wrap-contact100">
+                <form class="contact100-form validate-form">
+                    <span class="contact100-form-title">
+                        Send Us A Message
+                    </span>
+                    <label class="label-input100" for="first-name">Tell us your name *</label>
+                    <div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Type first name">
+                        <input id="first-name" class="input100" type="text" name="first-name" placeholder="First name">
+                        <span class="focus-input100"></span>
+                    </div>
+                    <div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Type last name">
+                        <input class="input100" type="text" name="last-name" placeholder="Last name">
+                        <span class="focus-input100"></span>
+                    </div>
+                    <label class="label-input100" for="email">Enter your email *</label>
+                    <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                        <input id="email" class="input100" type="text" name="email" placeholder="Eg. example@email.com">
+                        <span class="focus-input100"></span>
+                    </div>
+                    <label class="label-input100" for="phone">Enter phone number</label>
+                    <div class="wrap-input100">
+                        <input id="phone" class="input100" type="text" name="phone" placeholder="Eg. +91 80000 00000">
+                        <span class="focus-input100"></span>
+                    </div>
+                    <label class="label-input100" for="message">Message *</label>
+                    <div class="wrap-input100 validate-input" data-validate="Message is required">
+                        <textarea id="message" class="input100" name="message"
+                            placeholder="Write us a message"></textarea>
+                        <span class="focus-input100"></span>
+                    </div>
+                    <div class="container-contact100-form-btn">
+                        <button class="contact100-form-btn">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+                <div class="contact100-more flex-col-c-m"
+                    style="background-image : url('{% static 'images/photo-1521574873411-508db8dbe55f.jpg' %}')">
+                    <div class="flex-w size1 p-b-47">
+                        <div class="txt1 p-r-25">
+                            <span class="lnr lnr-map-marker"></span>
+                        </div>
+                        <div class="flex-col size2">
+                            <span class="txt1 p-b-20">
+                                Address
+                            </span>
+                            <span class="txt2">
+                                Flat No-407,Vinoothna Orchid,Padmavathi Colony,Kushaiguda,Hyderabad
+                            </span>
+                        </div>
+                    </div>
+                    <div class="dis-flex size1 p-b-47">
+                        <div class="txt1 p-r-25">
+                            <span class="lnr lnr-phone-handset"></span>
+                        </div>
+                        <div class="flex-col size2">
+                            <span class="txt1 p-b-20">
+                                Lets Talk
+                            </span>
+                            <span class="txt3">
+                                +91 99121 27510
+                            </span>
+                        </div>
+                    </div>
+                    <div class="dis-flex size1 p-b-47">
+                        <div class="txt1 p-r-25">
+                            <span class="lnr lnr-envelope"></span>
+                        </div>
+                        <div class="flex-col size2">
+                            <span class="txt1 p-b-20">
+                                General Support
+                            </span>
+                            <span class="txt3">
+                                <a href="" class="__cf_email__"
+                                    data-cfemail="97f4f8f9e3f6f4e3d7f2eff6fae7fbf2b9f4f8fa">[manitejjilla@gmail.com]</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="dropDownSelect1"></div>
+
+        <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+        <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+
+        <script src="vendor/animsition/js/animsition.min.js"></script>
+
+        <script src="vendor/bootstrap/js/popper.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+        <script src="vendor/select2/select2.min.js"></script>
+        <script>
+            $(".selection-2").select2({
+                minimumResultsForSearch: 20,
+                dropdownParent: $('#dropDownSelect1')
+            });
+        </script>
+
+        <script src="vendor/daterangepicker/moment.min.js"></script>
+        <script src="vendor/daterangepicker/daterangepicker.js"></script>
+
+        <script src="vendor/countdowntime/countdowntime.js"></script>
+
+        <script src="{% static 'main.js' %}"></script>
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-23581568-13');
+        </script>
+        <script defer
+            src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816"
+            integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw=="
+            data-cf-beacon='{"rayId":"7d9d283d0cb58fb6","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2023.4.0","si":100}'
+            crossorigin="anonymous"></script>
+
+        <br>
+        
+    </div>
+    <div class="ft bg-dark">
+        <div class="container bg-dark">
+            <!-- Footer -->
+            <footer class="bg-dark text-center text-white">
+                <!-- Grid container -->
+                <div class="container-fluid p-4 ft">
+                    <!-- Section: Social media -->
+                    <section class="">
+                        <!-- Facebook -->
+                        <a class="btn btn-outline-light btn-floating m-1"
+                            href="https://www.facebook.com/campaign/landing.php?campaign_id=14884913640&extra_1=s%7Cc%7C589460569891%7Cb%7Cfacebook%20signin%7C&placement=&creative=589460569891&keyword=facebook%20signin&partner_id=googlesem&extra_2=campaignid%3D14884913640%26adgroupid%3D128696221832%26matchtype%3Db%26network%3Dg%26source%3Dnotmobile%26search_or_content%3Ds%26device%3Dc%26devicemodel%3D%26adposition%3D%26target%3D%26targetid%3Dkwd-3821998899%26loc_physical_ms%3D9302242%26loc_interest_ms%3D%26feeditemid%3D%26param1%3D%26param2%3D&gclid=CjwKCAiA76-dBhByEiwAA0_s9Wsl9CsC_qpKirrtRj2MapdNHtn7Bgd3-Z1BAkPISUUn7Y-ojsPqyBoCaTQQAvD_BwE"
+                            role="button"><img src="{% static 'images/facebook-app-symbol (1).png' %}" alt=""></a>
+
+                        <!-- Instagram -->
+                        <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/manitejjilla/"
+                            role="button"><img src="{% static 'images/instagram (1).png' %}" alt=""></a>
+
+                        <!-- Linkedin -->
+                        <a class="btn btn-outline-light btn-floating m-1"
+                            href="https://www.linkedin.com/feed/?trk=sem-ga_campid.14650114788_asid.127961666300_crid.601257986824_kw.linkedin%20login_d.c_tid.kwd-12704335873_n.g_mt.e_geo.9302242"
+                            role="button"><img src="{% static 'images/linkedin (3).png' %}" alt=""></i></a>
+
+                        <!-- Github -->
+                        <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/3-ManiTej"
+                            role="button"><img src="{% static 'images/github.png' %}" alt=""></i></a>
+                    </section>
+                    <!-- Section: Social media -->
+
+                    <!-- Section: Form -->
+                    <section class="">
+                        <form action="">
+                            <!--Grid row-->
+                            <div class="row d-flex justify-content-center">
+                                <!--Grid column-->
+                                <div class="col-auto">
+                                    <p class="pt-2">
+                                        <strong>Sign up for our newsletter</strong>
+                                    </p>
+                                </div>
+                                <!--Grid column-->
+
+                                <!--Grid column-->
+                                <div class="col-md-5 col-12">
+                                    <!-- Email input -->
+                                    <div class="form-outline form-white mb-4">
+                                        <input type="email" id="form5Example2" class="form-control" />
+                                        <label class="form-label" for="form5Example2">Email address</label>
+                                    </div>
+                                </div>
+                                <!--Grid column-->
+
+                                <!--Grid column-->
+                                <div class="col-auto">
+                                    <!-- Submit button -->
+                                    <button type="submit" class="btn btn-outline-light mb-4">
+                                        Subscribe
+                                    </button>
+                                </div>
+                                <!--Grid column-->
+                            </div>
+                            <!--Grid row-->
+                        </form>
+                    </section>
+                    <!-- Section: Form -->
+
+                    <!-- Section: Text -->
+                    <section class="mb-4">
+                        <p>
+                            ProPredict is dedicated to providing valuable information about real estate. We aim to empower users with accurate predictions and insights to make informed decisions when it comes to property investments.
+                        </p>
+                        <br>
+                    </section>
+                    <!-- Section: Text -->
+
+                    <!-- Section: Links -->
+                    <section class="">
+                        <!--Grid row-->
+                        <div class="row">
+                            <!--Grid column-->
+                            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                                <h5 class="text-uppercase">About</h5>
+
+                                <p>Our primary goal is to provide extensive information and insights about the housing market through our website. By leveraging our platform, users can gain a comprehensive understanding of various factors influencing house prices and trends.</p>
+                            </div>
+                            <!--Grid column-->
+
+                            <!--Grid column-->
+                            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                                <h5 class="text-uppercase">Contact</h5>
+
+                                <ul class="list-unstyled mb-0">
+                                    <li>
+                                        <a href="" class="text-white">manitejjilla@gmail.com</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="text-white">040-87367368</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="text-white">9912127510
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="text-white">6302809351</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--Grid column-->
+
+                            <!--Grid column-->
+                            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                                <h5 class="text-uppercase">Important Links</h5>
+
+                                <ul class="list-unstyled mb-0">
+                                    <li>
+                                        <a href="#!" class="text-white">Your Account</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">Home</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">About</a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="text-white">Services</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--Grid column-->
+
+                            <!--Grid column-->
+                            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                                <h5>OPENING HOURS</h5>
+                                <table class="container mx-2">
+                                    <tbody>
+                                        <tr>
+                                            <td>Mon - Thu:</td>
+                                            <td>8am - 9pm</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Fri - Sat:</td>
+                                            <td>8am - 1am</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sunday:</td>
+                                            <td>9am - 10pm</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!--Grid column-->
+                        </div>
+                        <!--Grid row-->
+                    </section>
+                    <!-- Section: Links -->
+                </div>
+                <!-- Grid container -->
+
+
+
+            </footer>
+        </div>
+    </div>
+
+</body>
+
+</html>

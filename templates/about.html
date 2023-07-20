@@ -1,0 +1,299 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+	
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+		<div class="container">
+			<a class="navbar-brand" href="/">ProPredict</a>
+			<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+				class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'home' %}">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'predict' %}">Predict</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'about' %}">About</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'contact' %}">Contact</a>
+					</li>
+					{% if user.is_authenticated %}
+                    <!-- <li style="color: white;">Hello {{username}}</li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Login</a>
+                    </li>
+                    {% endif %}
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<br><br><br>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-md-5">
+				<center><h1>About Us</h1></center>
+				<center>
+					<p class="lead">Welcome to ProPredict! We are dedicated to providing accurate and reliable predictions for residential property prices. Our goal is to empower individuals, real estate professionals, and investors with valuable insights to make informed decisions in the dynamic real estate market.</p>
+				</center>
+			</div>
+		</div>
+		<br><br><br>
+		<div class="row featurette">
+			<div class="col-md-6">
+				<h2 class="featurette-heading fw-normal lh-1">Our Mission</h2>
+				<br>
+				<p class="lead">At House Price Predictor, our mission is to simplify the process of house price prediction and provide transparent information to our users. We leverage advanced data analysis techniques, machine learning algorithms, and historical market trends to deliver accurate predictions.</p>
+			</div>
+			<div class="col-md-6">
+				<center>
+					<img src="https://source.unsplash.com/300x300/?recommend,happy" alt="" class="img-fluid">
+				</center>
+			</div>
+		</div>
+		<br><br>
+		<div class="row featurette">
+			<div class="col-md-7 order-md-2">
+				<h2 class="featurette-heading fw-normal lh-1">How it works?</h2>
+				<br>
+				<p class="lead">Our House Price Prediction algorithm takes into account various factors such as location, property size, number of bedrooms and bathrooms, amenities, market trends, and historical sales data. By analyzing these data points, we generate predictions that can help you estimate the potential value of a property.</p>
+			</div>
+			<div class="col-md-5 order-md-1">
+				<center>
+					<img src="https://source.unsplash.com/300x300/?how" alt="" class="img-fluid">
+				</center>
+			</div>
+		</div>
+		<br><br>
+		<div class="row featurette">
+			<div class="col-md-6">
+				<h2 class="featurette-heading fw-normal lh-1">Quality and Accuracy</h2>
+				<br>
+				<p class="lead">We place great emphasis on the quality and accuracy of our predictions. Our team of data scientists and real estate experts work diligently to analyze and validate the data sources, ensuring that our predictions are reliable and up-to-date. We continuously refine our algorithms to improve the accuracy of our predictions and provide you with the most precise estimate of house prices.</p>
+			</div>
+			<div class="col-md-6">
+				<center>
+					<img src="https://source.unsplash.com/300x300/?satisfaction" alt="" class="img-fluid">
+				</center>
+			</div>
+		</div>
+		<br><br>
+		<div class="row featurette">
+			<div class="col-md-7 order-md-2">
+				<h2 class="featurette-heading fw-normal lh-1">Responsive Support</h2>
+				<br>
+				<p class="lead">We understand that you may have questions or need assistance while using our website. Our customer support team is available to provide prompt and helpful responses to your queries. Whether you need clarification on using the prediction tool or have technical issues, we are here to assist you. We strive to address your concerns promptly and ensure that you have a smooth and hassle-free experience.</p>
+			</div>
+			<div class="col-md-5 order-md-1">
+				<center>
+					<img src="https://source.unsplash.com/300x300/?resources" alt="" class="img-fluid">
+				</center>
+			</div>
+		</div>
+		<br><br>
+		<div class="row featurette">
+			<div class="col-md-6">
+				<h2 class="featurette-heading fw-normal lh-1">Join House Price Predictor Now!</h2>
+				<br>
+				<p class="lead">Joining our platform means becoming part of a vibrant community of real estate enthusiasts, investors, and professionals. Connect with like-minded individuals, share experiences, and exchange valuable insights. Our community forum and discussion boards foster collaboration and knowledge-sharing, creating an enriching environment for everyone involved.</p>
+			</div>
+			<div class="col-md-6">
+				<center>
+					<img src="https://source.unsplash.com/300x300/?join" alt="" class="img-fluid">
+				</center>
+			</div>
+		</div>
+	</div>
+	<br><br>
+
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+	<!-- Remove the container if you want to extend the Footer to full width. -->
+	<div class="">
+
+		<!-- Footer -->
+		<footer class="bg-dark text-center text-white">
+			<!-- Grid container -->
+			<div class="container p-4">
+				<!-- Section: Social media -->
+				<section class="">
+					<!-- Facebook -->
+					<a class="btn btn-outline-light btn-floating m-1"
+						href="https://www.facebook.com/campaign/landing.php?campaign_id=14884913640&extra_1=s%7Cc%7C589460569891%7Cb%7Cfacebook%20signin%7C&placement=&creative=589460569891&keyword=facebook%20signin&partner_id=googlesem&extra_2=campaignid%3D14884913640%26adgroupid%3D128696221832%26matchtype%3Db%26network%3Dg%26source%3Dnotmobile%26search_or_content%3Ds%26device%3Dc%26devicemodel%3D%26adposition%3D%26target%3D%26targetid%3Dkwd-3821998899%26loc_physical_ms%3D9302242%26loc_interest_ms%3D%26feeditemid%3D%26param1%3D%26param2%3D&gclid=CjwKCAiA76-dBhByEiwAA0_s9Wsl9CsC_qpKirrtRj2MapdNHtn7Bgd3-Z1BAkPISUUn7Y-ojsPqyBoCaTQQAvD_BwE"
+						role="button"><img src="{% static 'images/facebook-app-symbol (1).png' %}" alt=""></a>
+
+					<!-- Instagram -->
+					<a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/manitejjilla/"
+						role="button"><img src="{% static 'images/instagram (1).png' %}" alt=""></a>
+
+					<!-- Linkedin -->
+					<a class="btn btn-outline-light btn-floating m-1"
+						href="https://www.linkedin.com/feed/?trk=sem-ga_campid.14650114788_asid.127961666300_crid.601257986824_kw.linkedin%20login_d.c_tid.kwd-12704335873_n.g_mt.e_geo.9302242"
+						role="button"><img src="{% static 'images/linkedin (3).png' %}" alt=""></i></a>
+
+					<!-- Github -->
+					<a class="btn btn-outline-light btn-floating m-1" href="https://github.com/3-ManiTej"
+						role="button"><img src="{% static 'images/github.png' %}" alt=""></i></a>
+				</section>
+				<!-- Section: Social media -->
+
+				<!-- Section: Form -->
+				<section class="">
+					<form action="">
+						<!--Grid row-->
+						<div class="row d-flex justify-content-center">
+							<!--Grid column-->
+							<div class="col-auto">
+								<p class="pt-2">
+									<strong>Sign up for our newsletter</strong>
+								</p>
+							</div>
+							<!--Grid column-->
+
+							<!--Grid column-->
+							<div class="col-md-5 col-12">
+								<!-- Email input -->
+								<div class="form-outline form-white mb-4">
+									<input type="email" id="form5Example2" class="form-control" />
+									<label class="form-label" for="form5Example2">Email address</label>
+								</div>
+							</div>
+							<!--Grid column-->
+
+							<!--Grid column-->
+							<div class="col-auto">
+								<!-- Submit button -->
+								<button type="submit" class="btn btn-outline-light mb-4">
+									Subscribe
+								</button>
+							</div>
+							<!--Grid column-->
+						</div>
+						<!--Grid row-->
+					</form>
+				</section>
+				<!-- Section: Form -->
+
+				<!-- Section: Text -->
+				<section class="mb-4">
+					<p>
+						ProPredict is dedicated to providing valuable information about real estate. We aim to empower users with accurate predictions and insights to make informed decisions when it comes to property investments. 
+					</p>
+					<br>
+				</section>
+				<!-- Section: Text -->
+
+				<!-- Section: Links -->
+				<section class="">
+					<!--Grid row-->
+					<div class="row">
+						<!--Grid column-->
+						<div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+							<h5 class="text-uppercase">About</h5>
+
+							<p>Our primary goal is to provide extensive information and insights about the housing market through our website. By leveraging our platform, users can gain a comprehensive understanding of various factors influencing house prices and trends.</p>
+						</div>
+						<!--Grid column-->
+
+						<!--Grid column-->
+						<div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+							<h5 class="text-uppercase">Contact</h5>
+
+							<ul class="list-unstyled mb-0">
+								<li>
+									<a href="" class="text-white">manitejjilla@gmail.com</a>
+								</li>
+								<li>
+									<a href="" class="text-white">040-87367368</a>
+								</li>
+								<li>
+									<a href="" class="text-white">9912127510
+									</a>
+								</li>
+								<li>
+									<a href="" class="text-white">6302809351</a>
+								</li>
+							</ul>
+						</div>
+						<!--Grid column-->
+
+						<!--Grid column-->
+						<div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+							<h5 class="text-uppercase">Important Links</h5>
+
+							<ul class="list-unstyled mb-0">
+								<li>
+									<a href="#!" class="text-white">Your Account</a>
+								</li>
+								<li>
+									<a href="#!" class="text-white">Home</a>
+								</li>
+								<li>
+									<a href="#!" class="text-white">About</a>
+								</li>
+								<li>
+									<a href="#!" class="text-white">Services</a>
+								</li>
+							</ul>
+						</div>
+						<!--Grid column-->
+
+						<!--Grid column-->
+						<div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+							<h5>OPENING HOURS</h5>
+							<table class="container mx-2">
+								<tbody>
+								  <tr>
+									<td>Mon - Thu:</td>
+									<td>8am - 9pm</td>
+								  </tr>
+								  <tr>
+									<td>Fri - Sat:</td>
+									<td>8am - 1am</td>
+								  </tr>
+								  <tr>
+									<td>Sunday:</td>
+									<td>9am - 10pm</td>
+								  </tr>
+								</tbody>
+							  </table>
+						</div>
+						<!--Grid column-->
+					</div>
+					<!--Grid row-->
+				</section>
+				<!-- Section: Links -->
+			</div>
+			<!-- Grid container -->
+
+
+
+		</footer>
+		<!-- Footer -->
+
+	</div>
+	<!-- End of .container -->
+</body>
+
+</html>
